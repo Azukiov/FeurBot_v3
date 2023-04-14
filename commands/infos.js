@@ -39,7 +39,6 @@ module.exports = {
                     { name: `Latence`, value: `${latency}ms`, inline: true },
                     { name: `Commandes`, value: `${commands.length}`, inline: true },
                 )
-
             const msg = await interaction.reply({ embeds: [embed] });
             setTimeout(() => {
                 interaction.deleteReply();

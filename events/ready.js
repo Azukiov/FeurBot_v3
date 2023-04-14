@@ -9,7 +9,6 @@ module.exports = {
         const guilds = client.guilds.cache.size;
         const users = client.guilds.cache.reduce((a, g) => a + g.memberCount, 0);
 
-
         console.log(`Logged in as ${client.user.tag}!`);
         console.log(`Started at ${new Date().toLocaleString()}`)
         console.log(`Latency is ${Date.now() - client.readyAt}ms`)

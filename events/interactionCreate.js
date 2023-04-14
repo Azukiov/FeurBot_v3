@@ -8,7 +8,6 @@ module.exports = {
     async execute(interaction) {
         let client = interaction.client;
 
-
         if (interaction.type == InteractionType.ApplicationCommand) {
             if (interaction.channel.type == 'DM') return;
             if (interaction.user.bot) return;

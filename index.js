@@ -36,7 +36,6 @@ const rest = new REST({ version: '10' }).setToken(process.env.TOKEN);
 const log = l => console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] ${l}`);
 
 
-// register slash commands
 client.on('ready', async (client) => {
     try {
         await rest.put(
