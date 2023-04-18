@@ -31,11 +31,10 @@ require('dotenv').config();
 require('./db.js')
 
 
+
 client.commands = new Collection();
 const rest = new REST({ version: '10' }).setToken(process.env.TOKEN);
 const log = l => console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] ${l}`);
-
-
 client.on('ready', async (client) => {
     try {
         await rest.put(
@@ -48,16 +47,13 @@ client.on('ready', async (client) => {
 });
 
 
-const commands = [];
 
+const commands = [];
 readdirSync('./commands').forEach(async file => {
     const command = require(`./commands/${file}`);
     commands.push(command.data.toJSON());
     client.commands.set(command.data.name, command);
 })
-
-
-// event handler
 readdirSync('./events').forEach(async file => {
     const event = require(`./events/${file}`);
     if (event.once) {
@@ -68,8 +64,6 @@ readdirSync('./events').forEach(async file => {
 });
 
 
-
-// error
 process.on("uncaughtException", e => {
     console.log(e);
 })
@@ -79,7 +73,4 @@ process.on("unhandledRejection", e => {
 process.on("uncaughtExceptionMonitor", e => {
     console.log(e);
 })
-
-
-// login discord
 client.login(process.env.TOKEN);

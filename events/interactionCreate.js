@@ -1,6 +1,9 @@
-const { InteractionType, EmbedBuilder, ChannelType, PermissionsBitField, ButtonBuilder, ButtonStyle, ActionRowBuilder } = require('discord.js');
+const { InteractionType, EmbedBuilder } = require('discord.js');
 const { readdirSync, read } = require('fs');
 const db = require('../db');
+const errorEmbed = require('../embeds');
+const data = require('../data');
+
 
 module.exports = {
     name: 'interactionCreate',

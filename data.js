@@ -4,8 +4,6 @@ module.exports = {
             base: '141e94',
             error: 'ff0000',
         },
-        channels: {
-            
-        }
+        quoi: ['quoi', 'qoi', 'qwa', 'koi', 'pk']
     }
 }
